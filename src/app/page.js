@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="bg-indigo-100 text-indigo-700 text-center py-20 px-4">
+      <section className="bg-indigo-100 text-indigo-700 text-center py-20 px-4 mb-10">
         <h1 className="text-5xl md:text-6xl font-extrabold mb-4">
           Welcome to My Shop
         </h1>

@@ -27,10 +27,14 @@ export default function AddProductPage() {
 
     try {
       await axios.post(
-        `${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
-        form,
-        { headers: { "Content-Type": "application/json" } }
-      );
+  `${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
+  form,
+  {
+    headers: { "Content-Type": "application/json" },
+    withCredentials: true, // ✅ include cookies
+  }
+);
+
 
       setMessage({ type: "success", text: "Product added successfully!" });
       setForm({ name: "", description: "", price: "" });
