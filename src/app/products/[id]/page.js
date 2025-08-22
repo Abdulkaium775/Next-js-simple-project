@@ -1,5 +1,5 @@
-import { connectDB } from "../../lib/mongodb.js";
-import Product from "../../models/Product.js";
+import { connectDB } from "@/lib/mongodb";
+import Product from "@/models/Product";
 import mongoose from "mongoose";
 
 export default async function ProductDetails({ params }) {

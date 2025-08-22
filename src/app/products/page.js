@@ -1,5 +1,5 @@
-import { connectDB } from "../lib/mongodb.js";
-import Product from "../models/Product.js";
+import { connectDB } from "@/lib/mongodb";
+import Product from "@/models/Product";
 import Link from "next/link";
 
 export default async function ProductsPage() {

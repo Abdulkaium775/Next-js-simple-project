@@ -1,4 +1,5 @@
 import { FaFacebookF, FaTwitter, FaInstagram } from "react-icons/fa";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -11,24 +12,24 @@ export default function Footer() {
 
         {/* Middle: Quick Links */}
         <div className="flex space-x-6 mt-4 md:mt-0">
-          <a
+          <Link
             href="/"
             className="text-indigo-600 font-medium hover:text-green-500 transition-colors"
           >
             Home
-          </a>
-          <a
+          </Link>
+          <Link 
             href="/products"
             className="text-indigo-600 font-medium hover:text-green-500 transition-colors"
           >
             Products
-          </a>
-          <a
+          </Link>
+          <Link
             href="/login"
             className="text-indigo-600 font-medium hover:text-green-500 transition-colors"
           >
             Login
-          </a>
+          </Link>
         </div>
 
         {/* Right: Social Icons */}

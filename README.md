@@ -54,7 +54,7 @@ npm run dev
 
 Open your browser
 
-http://localhost:3000
+https://next-js-simple-project.vercel.app
 
 Folder Structure
 src/

@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
@@ -9,12 +11,12 @@ export default function Home() {
         <p className="text-lg md:text-xl mb-6">
           Your one-stop solution for amazing products
         </p>
-        <a
+        <Link
           href="/products"
           className="inline-block bg-indigo-600 text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:bg-green-500 transition"
         >
           Browse Products
-        </a>
+        </Link>
       </section>
 
       {/* Highlights Section */}
