@@ -13,18 +13,10 @@ export async function GET() {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
-
 export async function POST(req) {
   try {
     const session = await getServerSession(authOptions);
-
-    // Check authentication
-    if (!session) {
-      return NextResponse.json(
-        { error: "Unauthorized" },
-        { status: 401 }
-      );
-    }
+    if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
     await connectDB();
     const data = await req.json();

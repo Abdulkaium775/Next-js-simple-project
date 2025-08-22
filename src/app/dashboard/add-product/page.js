@@ -2,7 +2,7 @@
 
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function AddProductPage() {
@@ -13,10 +13,12 @@ export default function AddProductPage() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: "", text: "" });
 
-  if (status === "unauthenticated") {
-    router.push("/login");
-    return null;
-  }
+  // ✅ Redirect if unauthenticated
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.push("/login");
+    }
+  }, [status, router]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -24,9 +26,11 @@ export default function AddProductPage() {
     setMessage({ type: "", text: "" });
 
     try {
-      await axios.post("/api/products", form, {
-        headers: { "Content-Type": "application/json" },
-      });
+      await axios.post(
+        `${process.env.NEXT_PUBLIC_BASE_URL}/api/products`,
+        form,
+        { headers: { "Content-Type": "application/json" } }
+      );
 
       setMessage({ type: "success", text: "Product added successfully!" });
       setForm({ name: "", description: "", price: "" });
@@ -43,6 +47,9 @@ export default function AddProductPage() {
   if (status === "loading") {
     return <p className="p-6 text-indigo-600">Checking authentication...</p>;
   }
+
+  // While redirecting, prevent render
+  if (status === "unauthenticated") return null;
 
   return (
     <div className="p-6 bg-white min-h-screen flex justify-center items-start">

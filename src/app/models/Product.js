@@ -12,4 +12,6 @@ const ProductSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.models.Product || mongoose.model("Product", ProductSchema, "products");
+// Prevent model overwrite on hot reload
+export default mongoose.models.Product ||
+  mongoose.model("Product", ProductSchema, "products");
