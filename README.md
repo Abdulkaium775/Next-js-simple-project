@@ -1,100 +1,72 @@
-Next.js Product Management App
-Project Description
+# Next.js 15 Product Management App
 
-This is a simple product management application built with Next.js 15 (App Router). The app allows users to browse products, view product details, and add new products after logging in. Authentication is handled via NextAuth.js, supporting Google and credential login.
+A simple application built with **Next.js 15 (App Router)** and **NextAuth.js** for authentication.  
+Users can browse products, view details, and after logging in, manage products.
 
-Core Features:
+---
 
-Landing page with Navbar, Hero section, Product Highlights, and Footer
+## 🚀 Features
+- Landing page with Navbar, Hero, Highlights, Footer
+- Authentication with NextAuth.js (Google login)
+- Public product list + product details
+- Protected dashboard page for adding products
+- API routes for fetching & creating products
+- Toast messages & loading spinners
+- Theme toggle (light/dark)
 
-Public product list and product details pages
+---
 
-Login page with NextAuth.js (Google or credentials)
+## 🛠️ Tech Stack
+- Next.js 15 (App Router)
+- NextAuth.js
+- Tailwind CSS
+- Mock backend via Route Handlers (`/api`)
 
-Protected page for adding new products (accessible only when logged in)
+---
 
-Optional enhancements: loading spinner, toast messages, and theme toggle
+## 📂 Routes Summary
+- `/` → Landing Page
+- `/login` → Login with NextAuth
+- `/products` → Product list
+- `/products/[id]` → Product details
+- `/dashboard/add-product` → Protected page (Add new product)
 
-Technologies Used
+---
 
-Next.js 15 (App Router)
+## ⚙️ Setup & Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Abdulkaium775/Next-js-simple-project.git
+   cd next15-products-app
+Install dependencies:
 
-NextAuth.js for authentication
-
-MongoDB with Mongoose
-
-Tailwind CSS for styling
-
-Axios for HTTP requests
-
-Vercel for deployment
-
-Setup & Installation
-
-Clone the repository
-
-git clone <https://github.com/Abdulkaium775/Next-Js-simple-projects>
-cd <Next-Js-simple-projects>
-
-
-Install dependencies
-
+bash
+Copy
+Edit
 npm install
+Configure environment variables:
+Create a .env.local file:
 
+env
+Copy
+Edit
+NEXTAUTH_SECRET=your-secret-key
+GOOGLE_CLIENT_ID=your-google-client-id
+GOOGLE_CLIENT_SECRET=your-google-client-secret
+Run the development server:
 
-
-GOOGLE_CLIENT_ID=your-google-client-id-here
-GOOGLE_CLIENT_SECRET=your-google-client-secret-here
-
-
-Run the development server
-
+bash
+Copy
+Edit
 npm run dev
+Build for production:
 
+bash
+Copy
+Edit
+npm run build && npm start
+🔗 Live Demo
+Vercel: [your-vercel-link](https://next-js-simple-project.vercel.app/)
 
-Open your browser
-
-https://next-js-simple-project.vercel.app
-
-Folder Structure
-src/
- ├─ app/
- │   ├─ api/
- │   │   └─ products/route.js       # API route for products (GET/POST)
- │   ├─ dashboard/
- │   │   └─ add-product/page.js     # Protected page to add products
- │   ├─ products/
- │   │   ├─ [id]/page.js            # Product details page
- │   │   └─ page.js                 # Product list page
- │   ├─ login/page.js                # Login page
- │   └─ page.js                      # Landing page
- ├─ lib/
- │   └─ mongodb.js                   # MongoDB connection
- └─ models/
-     └─ Product.js                   # Mongoose product model
-
-Route Summary
-Route	Access	Description
-/	Public	Landing page with hero, product highlights, and navigation
-/login	Public	Login page using NextAuth.js (Google or credentials)
-/products	Public	List of all products
-/products/[id]	Public	Product details page
-/dashboard/add-product	Protected	Form to add new products; redirects to /login if unauthenticated
-/api/products	Public/Protected	API route (GET all products, POST new product – POST requires authentication)
-Optional Enhancements
-
-Loading spinner when submitting forms
-
-Toast messages for successful product addition
-
-Theme toggle (light/dark) using Tailwind CSS
-
-Deployment
-
-The project can be deployed on Vercel.
-
-Make sure environment variables are configured in the Vercel dashboard.
-
-License
-
-MIT
+📦 Repository
+GitHub: [your-github-repo](https://github.com/Abdulkaium775/Next-js-simple-project)
